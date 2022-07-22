@@ -16,4 +16,22 @@ const App = function() {
   return <div>HI!</div>;
 }
 
+// ReactDOM은 실제 DOM과 상호작용하는 반면에, 리액트는 컴포넌트를 생성하고 관리한다는 점
 ReactDOM.render(App);
+
+
+// 우리가 컴포넌트 혹은 클래스 컴포넌트, 타입 컴포넌트를 생성할 때, 
+/**
+ * const App = function() {
+ * return <div>HI!</div>;
+ *  }
+ * 이코드가 타입 컴포넌트이다, App은 많은 다른 인스턴스들을 가질 수 있다.
+ * 이는 인스턴스가 아니라 클래스라고 부른다. 위에 함수는 팩토리 형태이다.
+ * 실제 DOM에 랜더링 되는 컴포넌트의 인스턴스들을 만든다.
+ * 
+ * 컴포넌트를 인스턴스화 하는 과정이 필요
+ * 
+ * ReactDOM.render(App); 에서 App을 인스턴스화 해서 사용하려면 아래와 같이 바꿔주면 된다,
+ * 
+ * ReactDOM.render(<App />);
+ */
