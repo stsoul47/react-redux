@@ -11,14 +11,21 @@ import ReactDOM from 'react-dom';
 // 어떻게 렌더링 되며, 어떻게 그것들을 모으는지 등을 아는 것
 // 하지만 이 컴포넌트를 가져와 DOM에 삽입하는 라이브러리는 별도로 React DOM이라고 부른다.
 
-
-const App = function() {
-  return <div>HI!</div>;
+/**
+ * const App = function() {
+ * return <div>HI!</div>;
+ * } 
+ * 을 아래와 같이 ES6 문법의  Fat arrow(화살표 함수)로 바꿔줄수 있다.
+ */
+const App = () => {
+  return <div>Hi!</div>;
 }
 
-// ReactDOM은 실제 DOM과 상호작용하는 반면에, 리액트는 컴포넌트를 생성하고 관리한다는 점
-ReactDOM.render(App);
 
+
+// ReactDOM은 실제 DOM과 상호작용하는 반면에, 리액트는 컴포넌트를 생성하고 관리한다는 점
+// ReactDOM.render(App);
+ReactDOM.render(<App />, document.querySelector('.container'));
 
 // 우리가 컴포넌트 혹은 클래스 컴포넌트, 타입 컴포넌트를 생성할 때, 
 /**
