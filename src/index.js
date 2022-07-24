@@ -11,6 +11,15 @@ import ReactDOM from 'react-dom';
 // 어떻게 렌더링 되며, 어떻게 그것들을 모으는지 등을 아는 것
 // 하지만 이 컴포넌트를 가져와 DOM에 삽입하는 라이브러리는 별도로 React DOM이라고 부른다.
 
+import SearchBar from './components/search_bar';
+
+/**
+ * API Key를 할당하는 변수
+ */
+const API_KEY = "AIzaSyCsGoyf-mxvkA323AO6DkX04mOKh6_C6_Y";
+
+
+
 /**
  * const App = function() {
  * return <div>HI!</div>;
@@ -18,7 +27,11 @@ import ReactDOM from 'react-dom';
  * 을 아래와 같이 ES6 문법의  Fat arrow(화살표 함수)로 바꿔줄수 있다.
  */
 const App = () => {
-  return <div>Hi!</div>;
+  return (
+    <div>
+      <SearchBar/>
+    </div>
+  );
 }
 
 
