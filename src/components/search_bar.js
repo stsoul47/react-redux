@@ -9,12 +9,33 @@ import React, { Component } from 'react'; //jsx를 가지면 모든 컴포넌트
 
 class SearchBar extends Component {
 
-  onInputChange(event) {
-    console.log(event.target.value);
+  /**
+   * state를 정의하거나 재초기화 하는 방법
+   * constructor(props) {
+   * super(props);
+   * this.state = { term: '' };
+  }
+   */
+  constructor(props) {
+    super(props); // SearchBar 컴포넌트가 Component를 상속받는데, Component에는 constructor함수를 가진다. 
+
+    this.state = { term: '' };
+  }
+
+  onInputChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+    console.log(this.state);
   }
 
   render() {
-    return <input type="text" onChange={ this.onInputChange } />;
+    return (
+      <div>
+        <input type="text" name="term" onChange={ this.onInputChange } />
+        Value of the input: {this.state.term}
+      </div>
+    );
   }
 }
 
