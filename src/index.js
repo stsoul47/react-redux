@@ -11,14 +11,23 @@ import ReactDOM from 'react-dom';
 // 어떻게 렌더링 되며, 어떻게 그것들을 모으는지 등을 아는 것
 // 하지만 이 컴포넌트를 가져와 DOM에 삽입하는 라이브러리는 별도로 React DOM이라고 부른다.
 
+//youtube API search Import
+import YTSearch from 'youtube-api-search';
+
 import SearchBar from './components/search_bar';
+
 
 /**
  * API Key를 할당하는 변수
  */
 const API_KEY = "AIzaSyCsGoyf-mxvkA323AO6DkX04mOKh6_C6_Y";
 
-
+// 오브젝트는 key와 term을 가지고 있다. 두번째 요소는 함수를 작성(callback)
+// {key: ooo, term: '', ...} 구성 옵션
+// , function(data, ...) {}  콜백 함수
+YTSearch({key: API_KEY, term: 'surfboards'}, function(data) {
+  console.log("[YTSearch] callback data: ", data);
+});
 
 /**
  * const App = function() {
