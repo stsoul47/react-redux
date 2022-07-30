@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
 
 /**
  * API Key를 할당하는 변수
@@ -19,6 +20,7 @@ class App extends Component {
       videos: [],
     };
 
+    // 네트워크 리퀘스트의 시간 때문에, 데이터를 가져오는 시간이 조금 걸림
     YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
       // console.log("[YTSearch] callback data: ", data);
       this.setState({ videos }); 
@@ -31,7 +33,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SearchBar/>
+        <SearchBar />
+        <VideoList videos={this.state.videos} />
+        {/* App은 VideoList의 부모이고, VideoList는 App의 state(this.state)에 접근이 가능하다. */}
       </div>
     );
   }
